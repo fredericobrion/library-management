@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    db:
+      container_name: mysql_database
+      image: mysql:8.0.23
+      ports:
+        - 3306:3306
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: adonis_db
