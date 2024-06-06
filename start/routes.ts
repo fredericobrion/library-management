@@ -9,6 +9,7 @@
 
 const UsersController = () => import('#controllers/users_controller')
 const ClientsController = () => import('#controllers/clients_controller')
+const BookGenresController = () => import('#controllers/book_genres_controller')
 import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
@@ -22,3 +23,5 @@ router.post('/signup', [UsersController, 'signup'])
 router.post('/login', [UsersController, 'login'])
 
 router.resource('clients', ClientsController)
+
+router.resource('genres', BookGenresController)
