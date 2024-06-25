@@ -4,7 +4,6 @@ import { ServiceResponse } from '#types/service_response'
 export default class BookGenreService {
   async createGenre(genre: string): Promise<ServiceResponse<BookGenre>> {
     try {
-      console.log(genre)
       const genreAlreadyExists = await BookGenre.findBy('name', genre)
       if (genreAlreadyExists) {
         return { status: 'CONFLICT', data: { error: 'Genre already registered' } }
