@@ -11,6 +11,7 @@ const UsersController = () => import('#controllers/users_controller')
 const ClientsController = () => import('#controllers/clients_controller')
 const BookGenresController = () => import('#controllers/book_genres_controller')
 const AuthorsController = () => import('#controllers/authors_controller')
+const BooksController = () => import('#controllers/books_controller')
 import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
@@ -28,3 +29,5 @@ router.resource('clients', ClientsController)
 router.resource('genres', BookGenresController)
 
 router.resource('authors', AuthorsController)
+
+router.resource('books', BooksController)
